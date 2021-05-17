@@ -1,7 +1,7 @@
 using CommanderGQL.Data;
-using CommanderGQL.GraphQL;
 using CommanderGQL.GraphQL.Commands;
 using CommanderGQL.GraphQL.Platforms;
+using CommanderGQL.GraphQL;
 using GraphQL.Server.Ui.Voyager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,6 +30,7 @@ namespace CommanderGQL
             services
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
+                .AddMutationType<Mutation>()
                 .AddType<PlatformType>()
                 .AddType<CommandType>()
                 .AddFiltering()
